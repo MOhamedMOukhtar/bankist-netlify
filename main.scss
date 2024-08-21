@@ -1,0 +1,384 @@
+@use "./Flex/flex" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$black: #444;
+$white: #818181;
+$lighter: #eaeaea;
+$red: #e52a5a;
+$green: #39b385;
+
+.green {
+    color: #39b385;
+}
+
+.red {
+   color:#e52a5a; 
+}
+
+input {
+    outline:none;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f3f3f3;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// start header
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 40px;
+    padding-top: 20px;
+    margin-bottom: 5rem;
+
+    h3 {
+        font-weight: 500;
+        font-size: 1.9rem;
+    }
+    img {
+        height: 5.2rem;
+    }
+    form {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        input {
+            outline: none;
+            border: none;
+            width: 12rem;
+            padding: .7rem;
+            text-align: center;
+            border-radius: 10rem;
+            font-size: 1.8rem;
+            color: #313131;
+            transition: all 1s;
+             border: .5px solid #bfbfbf00;
+
+            &::placeholder {
+                color: #d0d0d0;
+            }
+
+            &:focus {
+                border: .5px solid #bfbfbf;
+            }
+        }
+
+        span {
+            border: none;
+            cursor: pointer;
+            font-size: 2.4rem;
+        }
+    }
+    
+}
+// end header
+
+// start for transition
+main {
+    width: 100rem;
+    margin: auto;
+    transition: all .7s;
+
+// start header for transition
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3.5rem;
+
+        .left {
+
+            h3 {
+                font-size: 2.2rem;
+                font-weight: 500;
+                color: $black
+            }
+            span {
+                color: $white;
+                font-size: 1.4rem;
+            }
+        }
+        .right {
+            font-size: 4.3rem;
+            color: $black;
+        }
+    }
+// end header for transition
+
+//  start for transition
+    .transform {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        
+        .mainleft {
+            flex: 60%;
+            
+            .minicont {
+                background-color: #fff;
+                height: 47rem;
+                overflow: auto;
+                border-radius: 12px;
+                
+                .info {
+                    @include flex-space-between;
+                    border-bottom: 1px solid $lighter;
+                    padding: 2rem 4.3rem;
+
+                    .right {
+                        @include flex-align;
+                        gap: 2rem;
+
+                        .deposit {
+                            background-image: linear-gradient(to top left, #39b385, #9be15d); 
+                        }
+
+                        .withdrawal {
+                            background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+                        }
+                        
+                        .depcomman {
+                            width: fit-content;
+                            padding: .1rem 1rem;
+                            border-radius: 10px;
+                            color: white;
+                            font-size:1.1rem;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                        }
+                        .date {
+                            color: $black;
+                            font-size: 1.15rem;
+                        }
+                    }
+                    .cost {
+                        font-size: 1.8rem;
+                        color: $black;
+                    }
+                }
+                
+            }
+        }
+        .mainright {
+            flex: 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+// card one
+            .cardone {
+                background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+                padding: 2.8rem ;
+                padding-left: 4rem;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                h3  {
+                    margin-bottom: 1.5rem;
+                    font-size: 1.6rem;
+                    color: $black
+                };
+                .formone {
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+// input for card one
+                    input {
+                        background-color: #ffffff66;
+                        width: 13rem;
+                        padding: .6rem;
+                        border-radius: 1rem;
+                        transition: all .3s;
+                        &:focus {
+                            background-color:#ffffff96;
+                        }  
+                    }
+// child one in card one
+                    .childone {
+                        @include flex-align;
+                        gap: 1rem
+                    }
+                    .childtwo {
+                        @include flex-align;
+                        gap: 5px
+                    }
+                    button {
+                        width: 5rem;
+                        height: 2.8rem;
+                        font-size: 2rem;
+                        border: none;
+                        border-radius: .6rem;
+                        background-color: white;
+                        cursor: pointer;
+                    }
+                }
+                .formtwo {
+                    @include flex-align;
+                    justify-content: start;
+                    gap: 8rem;
+                    padding-left: 3rem;
+                    font-size: 1.3rem;
+                    margin-top: .6rem;
+                }
+            }
+// card two
+            .cardtwo {
+                background-image: linear-gradient(to top left, #39b385, #9be15d);
+                padding: 2.8rem;
+                padding-left: 4rem;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                h3  {
+                    margin-bottom: 1.5rem;
+                    font-size: 1.6rem;
+                    color: $black
+                };
+                .formone {
+                    input {
+                        background-color: #ffffff66;
+                        width: 13rem;
+                        padding: .6rem;
+                        border-radius: 1rem;
+                        transition: all .3s;
+                        &:focus {
+                            background-color:#ffffff96;
+                        } 
+                    }
+                    .childone {
+                        @include flex-align;
+                        gap: 1rem
+                    }
+                    button {
+                        width: 5rem;
+                        height: 2.8rem;
+                        font-size: 2rem;
+                        border: none;
+                        border-radius: .6rem;
+                        background-color: white;
+                        cursor: pointer;
+                    }
+                }
+                .formtwo {
+                    @include flex-align;
+                    justify-content: start;
+                    gap: 8rem;
+                    padding-left: 3rem;
+                    font-size: 1.3rem;
+                    margin-top: .6rem;
+                }
+            }
+// card three
+            .cardthree {
+                background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+                padding: 2.8rem;
+                padding-left: 4rem;
+                border-radius: 12px;
+                display: flex;
+                flex-direction: column;
+                h3  {
+                    margin-bottom: 1.5rem;
+                    font-size: 1.6rem;
+                    color: $black
+                };
+                .formone {
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+
+                    input {
+                        background-color: #ffffff66;
+                        width: 13rem;
+                        padding: .6rem;
+                        border-radius: 1rem;
+                        transition: all .3s;
+                        &:focus {
+                            background-color:#ffffff96;
+                        }  
+                    }
+                    .childone {
+                        @include flex-align;
+                        gap: 1rem
+                    }
+                    .childtwo {
+                        @include flex-align;
+                        gap: 5px
+                    }
+                    button {
+                        width: 5rem;
+                        height: 2.8rem;
+                        font-size: 2rem;
+                        border: none;
+                        border-radius: .6rem;
+                        background-color: white;
+                        cursor: pointer;
+                    }
+                }
+                .formtwo {
+                    @include flex-align;
+                    justify-content: start;
+                    gap: 8rem;
+                    padding-left: 3rem;
+                    font-size: 1.3rem;
+                    margin-top: .6rem;
+                }
+            }
+        }
+    }
+}
+// start for transition
+
+// start footer
+footer {
+    @include flex-space-between;
+    margin-top: 2.5rem;
+
+    .left {
+        @include flex-align;
+        gap: 3rem;
+        text-transform: uppercase;
+        
+        p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            
+            span {
+                font-size: 2.2rem;
+                font-weight: 400;
+            }
+        }
+        
+        button {
+            text-transform: uppercase;
+            cursor:pointer;
+            border: none;
+
+            &:hover {
+                color: #444444d5;
+            }
+        }
+    }
+    .right {
+
+        p {
+            font-size: 1.25rem;
+        }
+        span {
+            font-weight:600;
+        }
+    }
+}
+
